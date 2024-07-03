@@ -46,6 +46,20 @@ class _ProductScreenState extends State<ProductScreen> {
                   setState(() {
                     cart.add(product);
                   });
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      backgroundColor: const Color.fromRGBO(241, 241, 241, 1),
+                      content: Text(
+                        '${product.label} added to cart!',
+                        style: const TextStyle(
+                          color: Color.fromRGBO(77, 50, 32, 1),
+                        ),
+                      ),
+                      duration: const Duration(
+                        seconds: 2,
+                      ),
+                    ),
+                  );
                 },
               );
             },
